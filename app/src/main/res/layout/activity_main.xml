@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:paddingHorizontal="48dp"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/open_scan_barcode_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:text="Сканировать штриход с помощью камеры"/>
+
+    <Button
+        android:id="@+id/open_input_barcode_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:text="Сканировать штриход с помощью камеры"/>
+
+</LinearLayout>
