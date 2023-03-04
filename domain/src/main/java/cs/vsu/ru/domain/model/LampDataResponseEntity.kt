@@ -1,5 +1,7 @@
 package cs.vsu.ru.domain.model
 
+import java.math.BigDecimal
+
 
 /*
 штрихкод - barcode
@@ -23,8 +25,23 @@ CRI - cri
  */
 
 data class LampDataResponseEntity(
-    private val brand: String = "",
-    private val model: String = "",
-    private val description: String = "",
-    private val price: String = "",
+    val barcode: String,
+    val image: String,
+    val brand: String,
+    val model: String,
+    val description: String,
+    val price: Int,
+    val currency: CurrencyModel,
+    val power: Int,
+    val lumen: Int,
+    val efficiency: Int,
+    val powerEquivalent: Int,
+    val color: Int,
+    val cri: Int,
+    val angle: Int,
+    val flicker: BigDecimal,
+    val switch: SwitchTypeModel,
+    val rating: Int,
+    val warranty: Int,
+    val active: Boolean
 )

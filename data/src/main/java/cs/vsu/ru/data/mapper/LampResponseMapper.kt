@@ -1,7 +1,11 @@
 package cs.vsu.ru.data.mapper
 
+import cs.vsu.ru.data.model.Currency
 import cs.vsu.ru.data.model.LampResponseDto
+import cs.vsu.ru.data.model.SwitchType
+import cs.vsu.ru.domain.model.CurrencyModel
 import cs.vsu.ru.domain.model.LampDataResponseEntity
+import cs.vsu.ru.domain.model.SwitchTypeModel
 
 class LampResponseMapper {
     fun fromEntity(entity: LampDataResponseEntity?): LampResponseDto {
@@ -9,7 +13,27 @@ class LampResponseMapper {
             TODO("Throw custom exception")
         }
 
-        val dto = LampResponseDto()
+        val dto: LampResponseDto = LampResponseDto(
+            barcode = entity.barcode,
+            image = entity.image,
+            brand = entity.brand,
+            model = entity.model,
+            description = entity.description,
+            price = entity.price,
+            currency = Currency.valueOf(entity.currency.toString()),
+            power = entity.power,
+            lumen = entity.lumen,
+            efficiency = entity.efficiency,
+            powerEquivalent = entity.powerEquivalent,
+            color = entity.color,
+            cri = entity.cri,
+            angle = entity.angle,
+            flicker = entity.flicker,
+            switch = SwitchType.valueOf(entity.switch.toString()),
+            rating = entity.rating,
+            warranty = entity.warranty,
+            active = entity.active
+        )
 
         return dto
     }
@@ -19,7 +43,27 @@ class LampResponseMapper {
             TODO("Throw custom exception")
         }
 
-        val entity = LampDataResponseEntity()
+        val entity = LampDataResponseEntity(
+            barcode = dto.barcode,
+            image = dto.image,
+            brand = dto.brand,
+            model = dto.model,
+            description = dto.description,
+            price = dto.price,
+            currency = CurrencyModel.valueOf(dto.currency.toString()),
+            power = dto.power,
+            lumen = dto.lumen,
+            efficiency = dto.efficiency,
+            powerEquivalent = dto.powerEquivalent,
+            color = dto.color,
+            cri = dto.cri,
+            angle = dto.angle,
+            flicker = dto.flicker,
+            switch = SwitchTypeModel.valueOf(dto.switch.toString()),
+            rating = dto.rating,
+            warranty = dto.warranty,
+            active = dto.active
+        )
 
         return entity
     }
