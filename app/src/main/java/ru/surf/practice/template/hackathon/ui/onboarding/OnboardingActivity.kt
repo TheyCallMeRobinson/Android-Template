@@ -23,6 +23,8 @@ class OnboardingActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.next_btn)
         button.setOnClickListener {
             viewPager2?.let { pager ->
+                if(pager.currentItem == onboardingPages.size - 2)
+                    button.text="Перейти к приложению"
                 if (pager.currentItem == onboardingPages.size - 1) {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
