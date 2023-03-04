@@ -8,18 +8,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ServiceProvider {
 
     private val baseUrl = "http://event.surfstudio.ru:8081/"
-    private lateinit var retrofit: Retrofit
+    private var retrofit: Retrofit = Retrofit.Builder()
+        .baseUrl(baseUrl)
+        .addConverterFactory(GsonConverterFactory.create())
+        .client(OkHttpClient.Builder().build())
+        .build()
 
-    lateinit var lampService: LampService
-
-    fun createService() {
-        retrofit = Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(OkHttpClient.Builder().build())
-            .build()
-
-        lampService = retrofit.create(LampService::class.java)
-    }
-
+    var lampService: LampService = retrofit.create(LampService::class.java)
 }
