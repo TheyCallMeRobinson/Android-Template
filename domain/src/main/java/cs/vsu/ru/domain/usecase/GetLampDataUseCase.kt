@@ -5,7 +5,7 @@ import cs.vsu.ru.domain.model.LampDataResponseEntity
 import cs.vsu.ru.domain.repository.LampRepository
 
 class GetLampDataUseCase(private val lampRepository: LampRepository) {
-    fun execute(barcode: String): LampDataResponseEntity {
+    fun execute(barcode: String): LampDataResponseEntity? {
         return lampRepository.getData(BarcodeRequestEntity(barcode))
     }
 }

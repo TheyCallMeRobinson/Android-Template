@@ -16,7 +16,7 @@ class LampRepositoryImpl(
     private val serviceProvider: ServiceProvider
 ) : LampRepository {
 
-    override fun getData(request: BarcodeRequestEntity): LampDataResponseEntity {
+    override fun getData(request: BarcodeRequestEntity): LampDataResponseEntity? {
         val lampService = serviceProvider.lampService
 
         val response = lampService.getData("empty").enqueue(object : Callback<LampResponseDto> {
@@ -29,6 +29,6 @@ class LampRepositoryImpl(
             }
         })
 
-        return LampDataResponseEntity()
+        return null
     }
 }
