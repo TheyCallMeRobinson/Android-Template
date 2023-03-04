@@ -1,4 +1,5 @@
 package cs.vsu.ru.domain.model
 
-class BarcodeRequestEntity {
-}
+data class BarcodeRequestEntity(
+    private val barcode: String
+)
