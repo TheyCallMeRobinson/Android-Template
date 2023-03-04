@@ -19,9 +19,14 @@ class LampRepositoryImpl(
     override fun getData(request: BarcodeRequestEntity): LampDataResponseEntity? {
         val lampService = serviceProvider.lampService
 
-        val response = lampService.getData("empty").enqueue(object : Callback<LampResponseDto> {
+        var entity: LampDataResponseEntity
+
+        //entity = responseMapper.fromDto(lampService.getData(request.barcode).execute().body())
+
+        val response = lampService.getData(request.barcode).enqueue(object : Callback<LampResponseDto> {
             override fun onResponse(call: Call<LampResponseDto>, response: Response<LampResponseDto>) {
                 Log.i("Lamp Request", "Success")
+                entity = responseMapper.fromDto(response.body())
             }
 
             override fun onFailure(call: Call<LampResponseDto>, t: Throwable) {
