@@ -37,7 +37,5 @@ class OnboardingAdapter(
         fun bindPage(page: OnboardingData){
             onboardingText.text = page.text
         }
-
-
     }
 }
