@@ -8,6 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ServiceProvider {
 
     private val baseUrl = "http://event.surfstudio.ru:8081/"
+
     private var retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
         .addConverterFactory(GsonConverterFactory.create())
