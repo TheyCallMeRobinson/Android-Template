@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:paddingHorizontal="48dp"
     android:layout_height="match_parent">
 
 
@@ -32,10 +31,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
+        android:layout_marginHorizontal="48dp"
+
         android:hint="Введите номер штрихкода"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48dp"
         android:text="Информация о лампочке"/>
 
 

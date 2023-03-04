@@ -26,7 +26,6 @@ class OnboardingAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindPage(onboardingPages[position])
-        holder.bindButtonText(position)
     }
 
     override fun getItemCount(): Int = onboardingPages.size
@@ -34,16 +33,9 @@ class OnboardingAdapter(
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
         private val onboardingText = itemView.findViewById<TextView>(R.id.text_onboarding)
-        private val onboardingButton = itemView.findViewById<Button>(R.id.next_btn)
 
         fun bindPage(page: OnboardingData){
             onboardingText.text = page.text
-        }
-
-        fun bindButtonText(position: Int) {
-            if (position == onboardingPages.size - 1) {
-                onboardingButton.text = "Перейти к приложению"
-            }
         }
     }
 }

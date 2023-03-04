@@ -13,6 +13,9 @@ import ru.surf.practice.template.hackathon.ui.onboarding.OnboardingActivity
 
 class SplashActivity : AppCompatActivity() {
 
+    //val sharedPref = getSharedPreferences("ONBOARDING_PREF", MODE_PRIVATE)
+    //var shouldShowOnboarding = sharedPref.getBoolean("SHOULD_SHOW_ONBOARDING", true)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
