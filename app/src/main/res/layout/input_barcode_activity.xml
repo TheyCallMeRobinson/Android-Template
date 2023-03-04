@@ -32,9 +32,11 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:layout_marginHorizontal="48dp"
+        android:id="@+id/barcode_et"
 
         android:hint="Введите номер штрихкода"/>
     <Button
+        android:id="@+id/barcode_next_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="48dp"
